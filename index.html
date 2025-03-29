@@ -13,19 +13,30 @@
 <a href="./rotstQuarter-unsteady.zip" download>Unsteady case</a>
 
 
-
+<hr>
 
   <p>Mesh: three regions 32x32x16 each, giving 49152 cells in total. </p>
-  <p>ReH=700. Spin-up. </p>
 
   <img height="400"  src="img/mesh1.png" alt="mesh">
+
+  <p>ReH=700. Spin-up. Execution time : 6.5 h. dt=2e-3, nt=1e5, code efficiency =wall time/(nt*nx*ny*nz)=5e-6. </p>
+  <p>ReH=1000. Spin-up. Execution time : 3.3 h. dt=2e-3, nt=5e4, code efficiency =wall time/(nt*nx*ny*nz)=5e-6. </p>
+
   <video height="400" controls>
   <!-- <source src="vid/moviereh700quarter.mp4" type="video/mp4"> -->
   <source src="vid/ofReh700.mp4" type="video/mp4">
   </video> 
 
+  <video height="400" controls>
+  <!-- <source src="vid/moviereh700quarter.mp4" type="video/mp4"> -->
+  <source src="vid/ofReh1000.mp4" type="video/mp4">
+  </video> 
+
+<hr>
+
   <p>Mesh: three regions 64x64x32 each, giving 393216 cells in total. </p>
-  <p>ReH=600. Spin-up. </p>
+  <p>ReH=600. Spin-up. Execution time : 12 h. dt=2e-3, nt=2.5e4, code efficiency =wall time/(nt*nx*ny*nz)=4.4e-6. </p>
+
 
   <img height="400"  src="img/mesh2.png" alt="mesh">
   <video height="400" controls>
