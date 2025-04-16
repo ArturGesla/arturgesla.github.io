@@ -83,6 +83,26 @@
   <source src="vid/ls3-2f.mp4" type="video/mp4">
   </video>
 
+  <h3>Code rotst : https://github.com/ArturGesla/rotst2 </h3>
+  <p>Re=803, domain R - 2pi - H,  mesh r-th-z = 150-40 cells, m=0,8,16,24,32,40,48,56, wall time 5073 sec, nt = 40000, dt = 5e-3, code efficiency=wall time/nx/nz/nt=2.11375e-05.  </p>
+  <p>mpirun -n 8 --use-hwthread-cpus rotstmpi -mode 200 -nx 150 -nz 40 -nF 8 -m 8 -gridType 2 -lx 8.75 -lz 1 -nt 40000 -dt 5e-3 -re 805 -wn 1e-6 -reg 10 -restart 0 </p>
+
+
+  <video height="350" controls>
+  <source src="vid/rotstVid225.mp4" type="video/mp4">
+  </video>
+  <video height="350" controls>
+  <source src="vid/rotstVid400.mp4" type="video/mp4">
+  </video>
+  <video height="350" controls>
+  <source src="vid/rotstVid803.mp4" type="video/mp4">
+  </video>
+
+  <img height="350"  src="img/rotstRe225.png" alt="mesh">
+  <img height="350"  src="img/rotstRe400.png" alt="mesh">
+  <img height="350"  src="img/rotstRe803.png" alt="mesh">
+
+
 
 <hr>
 
