@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+<a href="index.html">return to home</a>
+
+  <h1>Examples of numerical computation of rotor-stator flow</h1>
+  <p>Aspect ratio (R/H) : 10 </p>
+
+  <h2>OpenFoam</h2>
+  <h3>Quarter domain, nonpolar grid</h3>
+  <p>Files : </p>
+<a href="./rotstQuarter-steady.zip" download>Steady case</a>
+<a href="./rotstQuarter-unsteady.zip" download>Unsteady case</a>
+
+
+<hr>
+
+  <p>Mesh: three regions 32x32x16 each, giving 49152 cells in total. </p>
+
+
+  <p>ReH=700. Spin-up. Execution time : 6.5 h. dt=2e-3, nt=1e5, code efficiency =wall time/(nt*nx*ny*nz)=5e-6. </p>
+  <p>ReH=1000. Spin-up. Execution time : 3.3 h. dt=2e-3, nt=5e4, code efficiency =wall time/(nt*nx*ny*nz)=5e-6. </p>
+  <img width="400"  src="img/mesh1.png" alt="mesh">
+
+  <video width="400" controls>
+  <!-- <source src="vid/moviereh700quarter.mp4" type="video/mp4"> -->
+  <source src="vid/ofReh700.mp4" type="video/mp4">
+  </video> 
+
+  <video width="400" controls>
+  <!-- <source src="vid/moviereh700quarter.mp4" type="video/mp4"> -->
+  <source src="vid/ofReh1000.mp4" type="video/mp4">
+  </video> 
+
+<hr>
+
+  <p>Mesh: three regions 64x64x32 each, giving 393216 cells in total. </p>
+  <p>ReH=600. Spin-up. Execution time : 12 h. dt=2e-3, nt=2.5e4, code efficiency =wall time/(nt*nx*ny*nz)=4.4e-6. </p>
+
+
+  <img width="400"  src="img/mesh2.png" alt="mesh">
+  <video width="400" controls>
+  <source src="vid/ofReh600.mp4" type="video/mp4">
+  </video> 
+<hr>
+
+
+  <h3>Polar domain 2pi/16, polar grid </h3>
+
+<a href="./rotstPolar-steady.zip" download>Steady case</a>
+<a href="./rotstPolar-unsteady.zip" download>Unsteady case</a>
+
+  <p>Mesh: r-th-z 64x16x16 each, giving 16384 cells in total. </p>
+  <p>ReH=600. Spin-up. Execution time : 2684 s. dt=2e-3, nt=5e4, code efficiency =wall time/(nt*nx*ny*nz)=3.3e-6. </p>
+
+  <img width="400"  src="img/meshpolar.png" alt="mesh">
+  <video width="400" controls>
+  <source src="vid/ofpgReh600.mp4" type="video/mp4">
+  </video> 
+
+<hr>
+
+  <h3>Experiment comparison, (L. Schouveiler et al., 2000, JFM) </h3>
+  <p>H=1, R=8.75, H/R=0.1142, shroud fixed. Re=225, 273, 805. </p>
+
+  <img height="350"  src="img/sh1.png" alt="mesh">
+  <img height="350"  src="img/sh2.png" alt="mesh">
+  <img height="350"  src="img/sh3.png" alt="mesh">
+  <img height="350"  src="img/meshls2.png" alt="mesh">
+
+  <p>Re=803, domain R - 2pi/8 - H,  mesh 230400 cells, wall time 31282 sec, nt = 16667, dt = 12e-3, CFL = 1.71, code efficiency=wall time/cells/nt=8.15e-06.  </p>
+
+  <!-- <video height="350" controls>
+  <source src="vid/ls3-2.mp4" type="video/mp4">
+  </video>  -->
+  <video height="350" controls>
+  <source src="vid/ls1-2f.mp4" type="video/mp4">
+  </video>
+  <video height="350" controls>
+  <source src="vid/ls2-2f.mp4" type="video/mp4">
+  </video>
+  <video height="350" controls>
+  <source src="vid/ls3-2f.mp4" type="video/mp4">
+  </video>
+
+  <h3>Code rotst : https://github.com/ArturGesla/rotst2 </h3>
+  <p>Re=803, domain R - 2pi - H,  mesh r-th-z = 150-40 cells, m=0,8,16,24,32,40,48,56, wall time 5073 sec, nt = 40000, dt = 5e-3, code efficiency=wall time/nx/nz/nt=2.11375e-05.  </p>
+  <p>mpirun -n 8 --use-hwthread-cpus rotstmpi -mode 200 -nx 150 -nz 40 -nF 8 -m 8 -gridType 2 -lx 8.75 -lz 1 -nt 40000 -dt 5e-3 -re 805 -wn 1e-6 -reg 10 -restart 0 </p>
+
+
+  <video height="350" controls>
+  <source src="vid/rotstVid225.mp4" type="video/mp4">
+  </video>
+  <video height="350" controls>
+  <source src="vid/rotstVid400.mp4" type="video/mp4">
+  </video>
+  <video height="350" controls>
+  <source src="vid/rotstVid803.mp4" type="video/mp4">
+  </video>
+  <br>
+
+  <img height="350"  src="img/rotstRe225.png" alt="mesh">
+  <img height="350"  src="img/rotstRe400.png" alt="mesh">
+  <img height="350"  src="img/rotstRe803.png" alt="mesh">
+
+
+
+<hr>
+
+  <h3>Experiment comparison, (G. Gauthier et al., 1999, JFM) </h3>
+  <p>H=1, R=20.9, R/H=20.9, shroud fixed. Re=40, 120, 180, 300. </p>
+
+  <img width="350"  src="img/gau1.png" alt="mesh">
+  <img width="350"  src="img/gau2.png" alt="mesh">
+  <img width="350"  src="img/gau3.png" alt="mesh">
+  <img width="350"  src="img/gau4.png" alt="mesh">
+
+  <br>
+  <video width="350" controls>  <source src="vid/re40.mp4" type="video/mp4"> </video>
+  <video width="350" controls>  <source src="vid/re120.mp4" type="video/mp4"> </video>
+  <video width="350" controls>  <source src="vid/re180.mp4" type="video/mp4"> </video>
+  <video width="350" controls>  <source src="vid/re300.mp4" type="video/mp4"> </video>
+  <!-- <video width="350" controls>  <source src="vid/re300.mp4" type="video/mp4"> </video> -->
+
+  <br>
+
+  <img width="350"  src="img/gpre40.png" alt="mesh">
+  <img width="350"  src="img/gpre120.png" alt="mesh">
+  <img width="350"  src="img/gpre180.png" alt="mesh">
+  <img width="350"  src="img/re300gr.png" alt="mesh">
+  <!-- <img width="350"  src="img/gpre300.png" alt="mesh"> -->
+
+
+<hr>
+
+  <h3>Free surface, (A. Faugaret et al., 2020, JFM) </h3>
+
+  <img width="1100"  src="img/faugaretJFM.png" alt="mesh">
+<br>
+  <video width="550" controls>  <source src="vid/movieFreeSurf.mp4" type="video/mp4"> </video>
+  <img width="550"  src="img/normFreeSurf.png" alt="mesh">
+
+  <!-- <video width="350" controls>  <source src="vid/re300.mp4" type="video/mp4"> </video> -->
+
+
+
+
+<!-- <hr>
+ 
+  <video height="350" controls>
+  <source src="vid/ls1.mp4" type="video/mp4">
+  </video> 
+  <video height="350" controls>
+  <source src="vid/ls2.mp4" type="video/mp4">
+  </video> 
+  <video height="350" controls>
+  <source src="vid/ls3.mp4" type="video/mp4">
+  </video>  -->
+
+
+  <!-- <p>Mesh: really bad, Re=805. </p>
+
+  <img width="400"  src="img/meshSh.png" alt="mesh">
+  <video width="400" controls>
+  <source src="vid/sh3.mp4" type="video/mp4">
+  </video>  -->
+
+
+<!--   
+  <table>
+    <thead>
+      <tr>
+        <th>laminar</th>
+        <th>rans</th>
+        <th>les</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3>Fractional domain, polar grid</h3>
+  <p>files</p>
+  <p>video</p>
+
+  <h3>Full domain, nonpolar grid</h3>
+  <p>files</p>
+  <p>video</p> -->
+
+</body>
+
+</html>
