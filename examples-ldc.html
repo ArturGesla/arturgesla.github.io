@@ -8,12 +8,18 @@
 
 <a href="index.html">return to home</a>
 
-  <h1>LDC</h1>
+  <h1>Lid Driven Cavity</h1>
 
 <hr>
-
+<p>rotst -mode 4 -re 300000 -nx 256 -nz 256 -nt 500000 -dt 2e-4 -lx 1 -lz 1 -saveEachDts 1000 -uniCosMixedGrid 1 1 -regEps 10 1 -dhc 1 -outPsi 1</p>
   <video width="49%" controls>  <source src="vid/ldc30k.mp4" type="video/mp4"> </video> 
   <video width="49%" controls>  <source src="vid/ldc300k.mp4" type="video/mp4"> </video> 
+
+<br>
+<hr>
+<p>rotst -mode 4 -re 300000 -nx 1024 -nz 1024 -nt 500000 -dt 2e-4 -lx 1 -lz 1 -saveEachDts 1000 -uniCosMixedGrid 0.5 0.5 -regEps 10 1 -dhc 1 -outPsi 1</p>
+<p>Comutation time: 16h</p>
+  <video width="49%" controls>  <source src="vid/ldc300k-1024.mp4" type="video/mp4"> </video> 
 
 
 </div>
