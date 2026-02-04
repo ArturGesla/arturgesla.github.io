@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+
+<body style="background-color:powderblue;">
+
+<div class="myDiv" style="max-width:1000px; margin: auto; background: white;" >
+
+<div class="myDiv" style="max-width:800px; margin: auto; background: white;" >
+  
+
+<a href="index.html">return to home</a>
+
+  <h1>Escudier cylindrical container</h1>
+
+<p> Examples of numerical computation of Escudier cylindrical container, H/R=2, bottom lid rotating, ref: Escudier, M. (1988). Vortex breakdown: observations and explanations. Prog. Aerosp.
+Sci., 25(2):189–229. 
+  
+</p>
+
+
+<p>SFEMaNS (https://github.com/jean-luc-guermond/SFEMaNS)</p>
+<hr>
+<p> 
+  Re=Omega*R^2/nu=1852
+  
+  <br>============================================
+<br>              Dynamics-NAVIER-STOKES
+<br>============================================
+<br>===Reynolds number
+<br>1.852d3
+<br>===Coefficient for penalty of divergence in NS?
+<br>1.d0
+
+  <br> Mesh: 22057 P2/P1, m=0,1,2,3, mpirun -np 4, dt=2e-3, CFL=1.4 (as rep. by sf), nt=50k
+  <br> Wall time: 7.6h
+  <br> Code efficiency=(wall time)/nelem/nt : 2.48e-5 (6.21e-6 assuming that vel mesh is 4 times finer) 
+</p>
+<br>
+
+  <img width="33%"  src="img/mesh_sf_1.png" alt="mesh">
+  <img width="33%"  src="img/mesh_sf_2.png" alt="mesh">
+  <img width="33%"  src="img/sf_bubble.png" alt="mesh">
+
+  <br>
+  <img width="33%"  src="img/sf_norm_1.png" alt="mesh">
+  <img width="33%"  src="img/sf_norm_2.png" alt="mesh">
+  <img width="33%"  src="img/sf_norm_3.png" alt="mesh">
+  <br>
+  <img width="33%"  src="img/sf_velz_1.png" alt="mesh">
+  <img width="33%"  src="img/sf_velz_2.png" alt="mesh">
+  <img width="33%"  src="img/sf_velz_3.png" alt="mesh">
+
+  
+
+    <!-- <video width="99%" controls> <source src="vid/escudiersfemans.mp4" type="video/mp4">  </video>  -->
+
+
+<br>
+
+</div>
+</div>
+
+</body>
+
+</html>
