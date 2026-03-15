@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+
+<body style="background-color:powderblue;">
+
+<div class="myDiv" style="max-width:1000px; margin: auto; background: white;" >
+
+<div class="myDiv" style="max-width:800px; margin: auto; background: white;" >
+  
+
+<a href="index.html">return to home</a>
+
+  <h1>LES pipe flow</h1>
+
+<p> WALE-LES, compare with F. Ducros, F. Nicoud & T. Poinsot, Wall-Adapting Local Eddy-Viscosity models for simulations in complex geometries, <a href="https://imag.umontpellier.fr/~nicoud/PDF/ICFD_WALE.pdf" download> article</a>
+
+</p>
+
+
+<p>openFoam</p>
+<hr>
+<p> 
+  nonuniform block mesh, first cell size dr=L(1-alpha)/(1-alpha^n); L-block size, n-number of elements, alpha-growth factor = refinement^(1/(n-1));
+</p>
+<p> 
+  outer block size L=0.5; refinement=4; cells in outer block n=54; alpha=1.0265; dr=4.266e-3; mesh : hexahedra: 393 660; dt=0.1; CFL around 4; sim time 1000; ExecutionTime = 15 143 s, mpi np 6; 
+</p>
+ 
+  <img width="49%"  src="img/meshLES.png" alt="mesh">
+
+  <video width="49%" controls> <source src="vid/pipeLES.mp4" type="video/mp4">  </video> 
+
+    <img width="99%"  src="img/compLES.png" alt="mesh">
+
+
+</div>
+</div>
+
+</body>
+
+</html>
