@@ -11,7 +11,7 @@
 
 <a href="index.html">return to home</a>
 
-  <h1>Examples of numerical computation of vortex rope </h1>
+  <h1>Examples of numerical computation of a vortex rope </h1>
 
 <p>See the thesis of Simon Pasche for details.
   <a href=https://infoscience.epfl.ch/entities/publication/332689ad-0d38-4f3f-8be8-155dcd70a5da>thesis</a>
@@ -28,7 +28,7 @@
 
   <img width="49%"  src="img/mesh_swirlingJet.png" alt="mesh">
 
-  <video width="99%" controls>
+  <video width="49%" controls>
   <source src="vid/jetSusan2010.mp4" type="video/mp4">
   </video> 
 
@@ -36,12 +36,12 @@
 <br>
 <p>Nek5000</p>
 <hr>
-<video width="99%" controls> <source src="vid/susan2010Nek.mp4" type="video/mp4">  </video> 
+<video width="49%" controls> <source src="vid/susan2010Nek.mp4" type="video/mp4">  </video> 
 
 <br>
 <p>OpenFOAM</p>
 <hr>
-<video width="99%" controls> <source src="vid/susan2010OF.mp4" type="video/mp4">  </video> 
+<video width="49%" controls> <source src="vid/susan2010OF.mp4" type="video/mp4">  </video> 
 
 
 <br>
@@ -58,23 +58,38 @@
 
 <br>
 <p>openFoam - LES WALE</p>
-<p>mesh 14mln, Re=100k, dt=0.1,  CFL around 5, 24 processors, wall time : 44 h for 825 time units</p>
+<p>mesh 14mln, Re=100k, dt=0.1,  CFL around 5, 24 processors, wall time : 65 h for 1400 time units, video only 100 tu : 4.3 h, size of snapshot : U 800 MB; Q,p 270 MB</p>
 <p>visualisation : 10 contours Q 0.2:0.2:2</p>
 
 <hr>
   <img width="24%"  src="img/leswale100.png" alt="mesh">
   <img width="24%"  src="img/leswale200.png" alt="mesh">
   <img width="24%"  src="img/leswale300.png" alt="mesh">
+  <img width="24%"  src="img/leswale400.png" alt="mesh">
+  <img width="24%"  src="img/leswale600.png" alt="mesh">
   <img width="24%"  src="img/leswale800.png" alt="mesh">
+  <img width="24%"  src="img/leswale1000.png" alt="mesh">
+  <img width="24%"  src="img/leswale1400.png" alt="mesh">
 
   <br>
+  <br>
 
-  <img width="49%"  src="img/leswaleprobes.png" alt="mesh">
+  <div class="myDiv" style="width:52%; float: left;">
+<!-- <img width="99%"  src="img/leswaleresid.png" alt="mesh">
+  <img width="99%"  src="img/leswaleprobes.png" alt="mesh"> -->
+  <br>
+<video width="99%" controls poster="vid/leswlalevidposter.png" preload="none"> <source src="vid/leswalevid.mp4" type="video/mp4">  </video> 
+  </div>
+  <div class="myDiv" style="width:46%; margin-left: 53%;">
+<img width="99%"  src="img/leswaleresid.png" alt="mesh">
+  <img width="99%"  src="img/leswaleprobes.png" alt="mesh">
 
+  </div>
+  
   <!-- <img width="99%"  src="img/srnorm2500.png" alt="mesh"> -->
   <!-- <img width="49%"  src="img/mesh_swirlingJet.png" alt="mesh"> -->
 
-<!-- <video width="99%" controls poster="vid/sfre2500-poster.png" preload="none"> <source src="vid/sfre2500.mp4" type="video/mp4">  </video>  -->
+<!-- <video width="49%" controls poster="vid/leswlalevidposter.png" preload="none"> <source src="vid/leswalevid.mp4" type="video/mp4">  </video>  -->
 
 
 <br>
