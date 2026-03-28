@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+
+<body style="background-color:powderblue;">
+
+<div class="myDiv" style="max-width:1000px; margin: auto; background: white;" >
+
+<div class="myDiv" style="max-width:800px; margin: auto; background: white;" >
+  
+
+<a href="index.html">return to home</a>
+
+  <h1>Mesh convergence of the heat eq in FreeFem++</h1>
+
+<p>laplacian u = f, u=sin(pi*x)*sin(pi*y); f=-1*(sin(pi*x)*pi*pi*sin(pi*y)+sin(pi*y)*pi*pi*sin(pi*x)); hom Dir BC; domain [0,1]x[0,1]; 
+</p>
+
+
+<p>FreeFem++</p>
+<hr>
+<p> 
+  ||u||L2=sqrt int u*u dOmega = 0.5
+</p>
+<!-- <p> 
+  outer block size L=0.5; refinement=4; cells in outer block n=54; alpha=1.0265; dr=4.266e-3; mesh : hexahedra: 393 660; dt=0.1; CFL around 4; sim time 1000; ExecutionTime = 15 143 s, mpi np 6; 
+</p> -->
+ 
+  <img width="49%"  src="img/meshheat1.png" alt="mesh">
+  <img width="49%"  src="img/meshheat2.png" alt="mesh">
+  <img width="49%"  src="img/meshheat3.png" alt="mesh">
+  <img width="49%"  src="img/meshheat4.png" alt="mesh">
+  <img width="99%"  src="img/meshconvheatff.png" alt="mesh">
+
+  <!-- <video width="49%" controls poster="vid/posterpipeles.png" preload="none"> <source src="vid/pipeLES.mp4" type="video/mp4">  </video>  -->
+
+    <!-- <img width="99%"  src="img/compLES.png" alt="mesh"> -->
+
+
+</div>
+</div>
+
+</body>
+
+</html>
