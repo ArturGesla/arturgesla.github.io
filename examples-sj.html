@@ -11,29 +11,29 @@
 
 <a href="index.html">return to home</a>
 
-  <h1>Examples of numerical computation of a vortex rope </h1>
+  <h1>Examples of the numerical computations of a vortex rope </h1>
 
 <p>See the thesis of Simon Pasche for details.
   <a href=https://infoscience.epfl.ch/entities/publication/332689ad-0d38-4f3f-8be8-155dcd70a5da>thesis</a>
 </p>
 
 
-<p>OpenFoam</p>
+<!-- <p>OpenFoam</p>
 <hr>
 
 <a href="./swirlingJet.zip" download>Unsteady case</a>
 
-<br>
-  <video width="49%" controls poster="vid/postersj1.png" preload="none"> <source src="vid/swirlingJet.mp4" type="video/mp4">  </video> 
+<br> -->
+  <!-- <video width="49%" controls poster="vid/postersj1.png" preload="none"> <source src="vid/swirlingJet.mp4" type="video/mp4">  </video> 
 
-  <img width="49%"  src="img/mesh_swirlingJet.png" alt="mesh">
+  <img width="49%"  src="img/mesh_swirlingJet.png" alt="mesh"> -->
 
-  <video width="49%" controls poster="vid/ppostersj2.png" preload="none">
+  <!-- <video width="49%" controls poster="vid/ppostersj2.png" preload="none">
   <source src="vid/jetSusan2010.mp4" type="video/mp4">
-  </video> 
+  </video>  -->
 
 
-<br>
+<!-- <br> -->
 <p>Nek5000</p>
 <hr>
 <video width="49%" controls poster="vid/postersj3.png" preload="none"> <source src="vid/susan2010Nek.mp4" type="video/mp4">  </video> 
@@ -41,14 +41,17 @@
 <br>
 <p>OpenFOAM</p>
 <hr>
+<video width="49%" controls poster="vid/ppostersj2.png" preload="none">
+  <source src="vid/jetSusan2010.mp4" type="video/mp4">
+  </video> 
 <video width="49%" controls poster="vid/postersj4.png" preload="none"> <source src="vid/susan2010OF.mp4" type="video/mp4">  </video> 
 
 
 <br>
 <p>SFEMaNS (https://github.com/jean-luc-guermond/SFEMaNS)</p>
 <hr>
-  <img width="99%"  src="img/srnorm2300.png" alt="mesh">
-  <img width="99%"  src="img/srnorm2500.png" alt="mesh">
+  <img width="49%"  src="img/srnorm2300.png" alt="mesh">
+  <img width="49%"  src="img/srnorm2500.png" alt="mesh">
   <!-- <img width="49%"  src="img/mesh_swirlingJet.png" alt="mesh"> -->
 
 <video width="99%" controls poster="vid/sfre2500-poster.png" preload="none"> <source src="vid/sfre2500.mp4" type="video/mp4">  </video> 
@@ -58,10 +61,11 @@
 
 <br>
 <p>openFoam - LES WALE</p>
+<hr>
 <p>mesh 14mln, Re=100k, dt=0.1,  CFL around 5, 24 processors, wall time : 65 h for 1400 time units, video only 100 tu : 4.3 h, size of snapshot : U 800 MB; Q,p 270 MB</p>
 <p>visualisation : 10 contours Q 0.2:0.2:2, probably all this is Re= 500k I just realised, y+ is computed as 0.00164*sqrt(mag(wallShearStress))/nuEff</p>
 
-<hr>
+
   <img width="24%"  src="img/leswale100.png" alt="mesh">
   <img width="24%"  src="img/leswale200.png" alt="mesh">
   <img width="24%"  src="img/leswale300.png" alt="mesh">
