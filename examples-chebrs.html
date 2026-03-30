@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+
+<body style="background-color:powderblue;">
+
+<div class="myDiv" style="max-width:1000px; margin: auto; background: white;" >
+
+<div class="myDiv" style="max-width:800px; margin: auto; background: white;" >
+  
+
+<a href="index.html">return to home</a>
+
+  <h1>Staggered Chebyshev for rotor-stator  </h1>
+
+<p> 
+
+  <!-- I wanted to share with you some results of computations that I did lately. -->
+   I was interested in how much the solution in the rotor-stator flow is degraded by the singularity of the boundary conditions in the corner. To investigate this I wrote a code that finds the base flow in rotor-stator flow and the space is discretised with Chebyshev polynomials following Spectral Methods in Fluid Dynamics (C. Canuto, M. Y. Hussaini, A. Quarteroni, and T. A. Zang) section 3.5.1. I use fully staggered grid, so citing Canuto:
+
+ "The fully staggered grid uses different nodes for each primitive variable. The u component of velocity is deﬁned at the Gauss–Lobatto points in x and the Gauss points (plus the boundary points) in y; hence, it is a polynomial of degree N in the x variable and degree N + 1 in the y variable. The v component is handled in reverse fashion. Finally, the pressure is deﬁned at the Gauss points in both directions; hence, it is a polynomial of degree N − 1 in each variable."
+
+The flow case is the square cavity at the axis at Re=10 for simplicity. The base flow is found by the usual Newton method. Due to convolution of the 2D fields the algorithm is quite slow (O(n^6)) so around 30 modes is the max what I can do in a reasonable time. The computations with n=24 with 3 Newton iterations and the solving of full system takes in total 10 minutes.
+
+I considered 6 cases of boundary conditions:
+1) no regularisation,
+2) linear shroud,
+3) shroud regularisation with an exponential profile in the spirit of Lopez and Serre with eps=0.03,
+4) the same as 3) but on the stator,
+5) shroud and stator regularisation with exponential profiles with eps=0.03,
+6) same as 5) but eps=0.006.
+
+I attach six plots summarising the computations. I monitored the value of the v velocity (utheta) in the central point of the cavity. I didn't bother transform the usual [-1,1] interval to the real one for plotting but the axis has to be imagined in the left of the plot and the stator in the right.
+
+Concerning observations I see that (at least concerning the pointwise utheta value at the midpoint) the nonregularised case (1) converges with O(1/n^4). This is improved by imposing exponential profiles and in particular regularising the shroud and the stator at the same time (cases 5 and 6) allows to get the similar accuracy with thinner regularisation than regularising the shroud or stator alone (convergence is O(1/n^6) for cases 3,4 and 6). Also the linear shroud profile is converging quite fast with O(1/n^10).
+</p>
+
+<!-- Hello
+I will take a deeper look when I am back (I have to print the figures
+which I cannot do at the moment)
+
+below a few comments on this staggered grid
+This staggered grid was proposed by Bernardi and Maday in 1988, as a way
+to get rid of the spurious pressure modes that
+arise when looking for velocity components and pressure in the same
+polynomial space Pn x Pm.
+The spurious modes are pressure modes that give a null gradient and that
+cannot be determined.
+A first staggered grid was proposed looking for the  velocity components
+in Pn x Pm
+and the pressure in Pn-1 x Pm-1  but it still suffers from one spurious
+pressure mode
+  (in addition to the constant pressure mode of course)
+
+I used this staggered grid for the benchmark problem held in Marseille
+in 1988...
+You can find it on my web page as the pdf attached to the proceeding C9
+
+I  think that nobody ever used it, you are probably the second one to
+use it...
+
+It was later proposed to get rid of the spurious pressure modes by
+looking for the pressure in Pn-2 x Pm-2
+while  keeping the  velocity components in Pn x Pm .
+this is the basis of the spectral element in Nekton and its variants.
+Some people (Maday, Patera) even proposed to decrease the polynomial
+space for the pressure
+  down to P sqrt(N) x P sqrt(M) ... which of course decreases the size
+of the Uzawa matrix or
+improves the convergence speed of  iterative algorithm for solving the
+corresponding linear system.
+
+regards
+patrick -->
+
+<img width="99%"  src="img/chebStudy-c1-constsh.png" alt="mesh">
+<img width="99%"  src="img/chebStudy-c2-lin.png" alt="mesh">
+<img width="99%"  src="img/chebStudy-c3-regsh.png" alt="mesh">
+<img width="99%"  src="img/chebStudy-c4-regst.png" alt="mesh">
+<img width="99%"  src="img/chebStudy-c5-dblreg.png" alt="mesh">
+<img width="99%"  src="img/chebStudy-c6-dblreg2.png" alt="mesh">
+
+
+<p> </p> <br>
+
+</div>
+</div>
+
+</body>
+
+</html>
