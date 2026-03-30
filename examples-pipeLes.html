@@ -21,6 +21,9 @@
 <p>openFoam</p>
 <hr>
 <p> 
+  Re=50 000;
+</p>
+<p> 
   nonuniform block mesh, first cell size dr=L(1-alpha)/(1-alpha^n); L-block size, n-number of elements, alpha-growth factor = refinement^(1/(n-1));
 </p>
 <p> 
@@ -36,7 +39,7 @@
 <hr>
 
 <p> 
-  Re=10 000;
+  Re=10 000; wall time 69839s = 19.4 h for 5000 time units, 6 proc laptop;
 </p>
   <img width="33%"  src="img/residsLesPipe.png" alt="mesh">
   <img width="33%"  src="img/probeLesPipe.png" alt="mesh">
@@ -52,7 +55,23 @@
 <img width="49%"  src="img/lespipe800.png" alt="mesh">
 <img width="49%"  src="img/lespipe900.png" alt="mesh">
 <img width="49%"  src="img/lespipeyp.png" alt="mesh">
+
+
+
 <p> </p> <br>
+
+
+<p> 
+uz averaged on 2000:100:5000; ReTau around 450; y+ goes from 1.2 to Retau, it means that y+=45 is around 10% radius; quarter domain and mesh prob influence the bulk; 
+</p>
+
+<p> 
+y+=dy*ReTau=sqrt(dy*du/nu); ReTau=sqrt(du/dy/nu); ReTau=Reb^0.875 - almost linear;
+</p>
+
+<img width="49%"  src="img/ypluspipeles.png" alt="mesh">
+<img width="49%"  src="img/nutnupipeles.png" alt="mesh">
+
 <p> </p> <br>
 
 </div>
