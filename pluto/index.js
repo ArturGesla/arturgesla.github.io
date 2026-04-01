@@ -27,7 +27,7 @@ var spectrum = document.querySelector('#Spectrum').getContext('2d'),
 // Convert http://base64.wutils.com/encoding-online/
 
         
-// image.crossOrigin = "Anonymous"; //sit sth does not work cros does not work
+// image.crossOrigin = "Anonymous"; //sit sth does not work cros does not work // aactually chat says that it will never work on local machine but has to be on server
         image.src = 'pluto/pluto2.png';
         
 
@@ -146,106 +146,106 @@ console.log('hey2');
     })
 
 //to debug
-// slider.addEventListener('change', function(e){
-//     console.log('hey');
-//     result.drawImage(image,0,0); //somehow explicitly do
+slider.addEventListener('change', function(e){
+    console.log('hey');
+    result.drawImage(image,0,0); //somehow explicitly do
     
-//     var w = image.width,
-//         h = image.height, // w == h
-//         re = [],
-//         im = [];
-//     // Initialization, the number N is the base number 2
-//     FFT.init(w);
-//     FrequencyFilter.init(w);
+    var w = image.width,
+        h = image.height, // w == h
+        re = [],
+        im = [];
+    // Initialization, the number N is the base number 2
+    FFT.init(w);
+    FrequencyFilter.init(w);
     
-//     var src = result.getImageData(0, 0, w, h),
-//         data = src.data,
-//         tel_radius = slider.value/2,
-//         lambda=[665e-9,550e-9,470e-9],
-//         width=0.12, //deg
-//         k_max=2*60*60*180*w/width/2, //maximalm wave number k due to sampling
-//         radius_k=[2*Math.PI/lambda[0]*tel_radius,2*Math.PI/lambda[1]*tel_radius,2*Math.PI/lambda[2]*tel_radius],
-//         radius_px=[radius_k[0]/k_max*w/2,radius_k[1]/k_max*w/2,radius_k[2]/k_max*w/2],
-//         i, val, p;
-//     //console.log(radius_px);
-//         var _data=[];
+    var src = result.getImageData(0, 0, w, h),
+        data = src.data,
+        tel_radius = slider.value/2,
+        lambda=[665e-9,550e-9,470e-9],
+        width=0.12, //deg
+        k_max=2*60*60*180*w/width/2, //maximalm wave number k due to sampling
+        radius_k=[2*Math.PI/lambda[0]*tel_radius,2*Math.PI/lambda[1]*tel_radius,2*Math.PI/lambda[2]*tel_radius],
+        radius_px=[radius_k[0]/k_max*w/2,radius_k[1]/k_max*w/2,radius_k[2]/k_max*w/2],
+        i, val, p;
+    //console.log(radius_px);
+        var _data=[];
     
-//     for (let index = 0; index < 3; index++) { //loop for three layers
+    for (let index = 0; index < 3; index++) { //loop for three layers
             
-//         //Generate arrays to store real and imaginary parts
-//         //Image data is packed into a real array
-//         for(var y=0; y<h; y++) {
-//             i = y*w;
-//             for(var x=0; x<w; x++) {
-//             re[i + x] = data[(i << 2) + (x << 2)+index]; //only red from rgb, every fouth bit
-//             im[i + x] = 0.0;
-//             }
-//         }
-//         FFT.fft2d(re, im);  // Secondary meta-FFT
-//         FrequencyFilter.swap(re, im)  // Quadrant replacement
-//         FrequencyFilter.LPF(re, im, radius_px[index]);
-//         FrequencyFilter.swap(re, im);  // 象限入れ替え
-//         FFT.ifft2d(re, im);  // 二次元逆FFT
+        //Generate arrays to store real and imaginary parts
+        //Image data is packed into a real array
+        for(var y=0; y<h; y++) {
+            i = y*w;
+            for(var x=0; x<w; x++) {
+            re[i + x] = data[(i << 2) + (x << 2)+index]; //only red from rgb, every fouth bit
+            im[i + x] = 0.0;
+            }
+        }
+        FFT.fft2d(re, im);  // Secondary meta-FFT
+        FrequencyFilter.swap(re, im)  // Quadrant replacement
+        FrequencyFilter.LPF(re, im, radius_px[index]);
+        FrequencyFilter.swap(re, im);  // 象限入れ替え
+        FFT.ifft2d(re, im);  // 二次元逆FFT
     
     
         
-//         islog=true;
-//         var val = 0,
-//             _n=w,
-//             i = 0,
-//             p = 0,
-//             _spectrum = [],
-//             max = 1.0,
-//             imax = 0.0,
-//             n2 = _n*_n;
-//         /*
-//         for(var i=0; i<n2; i++) {
-//         if(islog){
-//             _spectrum[i] = Math.log(Math.sqrt(re[i]*re[i] + im[i]*im[i]));
+        islog=true;
+        var val = 0,
+            _n=w,
+            i = 0,
+            p = 0,
+            _spectrum = [],
+            max = 1.0,
+            imax = 0.0,
+            n2 = _n*_n;
+        /*
+        for(var i=0; i<n2; i++) {
+        if(islog){
+            _spectrum[i] = Math.log(Math.sqrt(re[i]*re[i] + im[i]*im[i]));
     
-//         } else {
-//             _spectrum[i] =  Math.sqrt(re[i]*re[i] + im[i]*im[i]);
+        } else {
+            _spectrum[i] =  Math.sqrt(re[i]*re[i] + im[i]*im[i]);
     
-//         }
-//         if(_spectrum[i] > max) {
-//         max = _spectrum[i];
-//         }
-//         }
-//         imax = 1/max;
-//         for(var j=0; j<n2; j++) {
-//             _spectrum[j] = _spectrum[j]*255*imax;
-//         }
-//         */
+        }
+        if(_spectrum[i] > max) {
+        max = _spectrum[i];
+        }
+        }
+        imax = 1/max;
+        for(var j=0; j<n2; j++) {
+            _spectrum[j] = _spectrum[j]*255*imax;
+        }
+        */
     
     
     
-//         //var _data=[];
+        //var _data=[];
     
-//         for(var y=0; y<_n; y++) {
-//         i = y*_n;
-//         for(var x=0; x<_n; x++) {
-//             //val = _spectrum[i + x];
-//             val = re[i + x];
-//             p = (i << 2) + (x << 2);
-//             _data[p+index] = val;
-//             //_data[p + 1] = val;//val;
-//             //_data[p + 2] = val ;
-//             _data[p + 3] = 255;
-//         }
-//         }
+        for(var y=0; y<_n; y++) {
+        i = y*_n;
+        for(var x=0; x<_n; x++) {
+            //val = _spectrum[i + x];
+            val = re[i + x];
+            p = (i << 2) + (x << 2);
+            _data[p+index] = val;
+            //_data[p + 1] = val;//val;
+            //_data[p + 2] = val ;
+            _data[p + 3] = 255;
+        }
+        }
     
-//     }
-//     //console.log(_data);
-//     var _img = result.getImageData(0, 0, w, h);
-//     var data1=Uint8ClampedArray.from(_data);
+    }
+    //console.log(_data);
+    var _img = result.getImageData(0, 0, w, h);
+    var data1=Uint8ClampedArray.from(_data);
     
-//     for (let index = 0; index < w*h*4; index++) {
-//         _img.data[index]=data1[index];
-//     }
+    for (let index = 0; index < w*h*4; index++) {
+        _img.data[index]=data1[index];
+    }
     
-//     spectrum.putImageData(_img,0,0);
-//     }
-// )
+    spectrum.putImageData(_img,0,0);
+    }
+)
 
 
 // image.src = 'pluto/pluto2.png';
