@@ -27,8 +27,8 @@ var spectrum = document.querySelector('#Spectrum').getContext('2d'),
 // Convert http://base64.wutils.com/encoding-online/
 
         
-// image.crossOrigin = "Anonymous"; //sit sth does not work cros does not work // aactually chat says that it will never work on local machine but has to be on server
-        image.src = 'pluto/pluto2.png';
+// image.crossOrigin = "Anonymous"; //sit sth does not work cros does not work // aactually chat says that it will never work on local machine but has to be on server, funnly enough it worked, this ai is too strong
+        // image.src = 'pluto/pluto2.png';
         
 
 
@@ -248,7 +248,7 @@ slider.addEventListener('change', function(e){
 )
 
 
-// image.src = 'pluto/pluto2.png';
+image.src = 'pluto/pluto2.png';
 
 
 
