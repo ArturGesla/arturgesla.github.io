@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Pluto simulation</title> -->
+    <!-- <link href="pluto/styles.css" type="text/css" rel="stylesheet"> -->
+
+<body style="background-color:powderblue;">
+
+<div class="myDiv" style="max-width:1000px; margin: auto; background: white;" >
+
+<div class="myDiv" style="max-width:800px; margin: auto; background: white;" >
+  
+
+<a href="index.html">return to home</a>
+
+  <h1>Diffraction limited image of Pluto seen with telescopes of different diameter </h1>
+
+<div class="slideContainer">
+            <input type="range" min="2" max="200" value="50" id="myRange" class="slider">
+            <p>Telescope diameter: <span id="value"></span> m</p>
+
+
+            <!-- <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-0lax">Real telescopes</th>
+                    <th class="tg-0lax">primary mirror diameter</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td class="tg-0lax">Hubble space telescope</td>
+                    <td class="tg-0lax">2.4 m</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Very large telescope</td>
+                    <td class="tg-0lax">8.2 m</td>
+                  </tr>
+
+                  <tr>
+                    <td class="tg-0lax">Extremely large telescope</td>
+                    <td class="tg-0lax">39 m</td>
+                  </tr>
+
+                </tbody>
+                </table> -->
+
+               <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-fcvt{background-color:#FFF;border-color:#000000;text-align:left;vertical-align:middle}
+.tg .tg-4vrb{background-color:#FFF;border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-1d2w{background-color:#FFF;border-color:#000000;font-weight:bold;text-align:center;vertical-align:middle}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-1d2w">Real telescopes</th>
+    <th class="tg-1d2w">primary mirror diameter</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-fcvt">Hubble space telescope</td>
+    <td class="tg-4vrb">2.4 m</td>
+  </tr>
+  <tr>
+    <td class="tg-fcvt">Very large telescope</td>
+    <td class="tg-4vrb">8.2 m</td>
+  </tr>
+  <tr>
+    <td class="tg-fcvt">Extremely large telescope</td>
+    <td class="tg-4vrb">39 m</td>
+  </tr>
+</tbody>
+</table>
+
+        </div>
+
+<p> </p> <br>
+
+        
+    <center>
+        <canvas id="Result" width="256" height="256"></canvas>
+        <canvas id="Spectrum" height="256" width="256"></canvas>
+        <h3>Real Hubble Space Telescope view of Pluto:</h3>
+        <!-- <img src="pluto/hst_pluto.jpg" alt=""> -->
+          <img width="99%"  src="pluto/hst_pluto.jpg" alt="mesh">
+<p> </p> <br>
+<p> </p> <br>
+
+    </center>
+   
+
+
+</div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="pluto/fft.js"></script>
+<script type="text/javascript" src="pluto/filter.js"></script>
+<script type="text/javascript" src="pluto/spectrum.js"></script>
+<script src="pluto/index.js">   </script>
+
+</html>
