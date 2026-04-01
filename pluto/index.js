@@ -65,7 +65,7 @@ console.log('hey2');
         i, val, p;
 
 
-    console.log(radius_px);
+    // console.log(radius_px);
         var _data=[];
     
     for (let index = 0; index < 3; index++) { //loop for three layers
@@ -167,7 +167,9 @@ slider.addEventListener('change', function(e){
         radius_k=[2*Math.PI/lambda[0]*tel_radius,2*Math.PI/lambda[1]*tel_radius,2*Math.PI/lambda[2]*tel_radius],
         radius_px=[radius_k[0]/k_max*w/2,radius_k[1]/k_max*w/2,radius_k[2]/k_max*w/2],
         i, val, p;
+
     //console.log(radius_px);
+    console.log(    tel_radius);
         var _data=[];
     
     for (let index = 0; index < 3; index++) { //loop for three layers
