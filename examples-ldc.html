@@ -14,15 +14,34 @@
 
 <hr>
 <p>rotst -mode 4 -re 300000 -nx 256 -nz 256 -nt 500000 -dt 2e-4 -lx 1 -lz 1 -saveEachDts 1000 -uniCosMixedGrid 1 1 -regEps 10 1 -dhc 1 -outPsi 1</p>
-  <video width="49%" controls poster="vid/posterldc1.png" preload="none" >  <source src="vid/ldc30k.mp4" type="video/mp4"> </video> 
-  <video width="49%" controls poster="vid/posterldc2.png" preload="none" >  <source src="vid/ldc300k.mp4" type="video/mp4"> </video> 
-
-<br>
-<hr>
 <p>rotst -mode 4 -re 300000 -nx 1024 -nz 1024 -nt 500000 -dt 2e-4 -lx 1 -lz 1 -saveEachDts 1000 -uniCosMixedGrid 0.5 0.5 -regEps 10 1 -dhc 1 -outPsi 1</p>
 <p>Comutation time: 16h</p>
-  <!-- <video width="49%" controls  preload="metadata">  <source src="vid/ldc300k-1024.mp4#t=0" type="video/mp4"> </video>  -->
-  <video width="49%" controls poster="vid/posterldc3.png" preload="none" >  <source src="vid/ldc300k-1024.mp4" type="video/mp4"> </video> 
+
+  <video width="33%" controls poster="vid/posterldc1.png" preload="none" >  <source src="vid/ldc30k.mp4" type="video/mp4"> </video> 
+  <video width="33%" controls poster="vid/posterldc2.png" preload="none" >  <source src="vid/ldc300k.mp4" type="video/mp4"> </video> 
+  <video width="33%" controls poster="vid/posterldc3.png" preload="none" >  <source src="vid/ldc300k-1024.mp4" type="video/mp4"> </video> 
+<br>
+
+<p>Quick Python setup<a href="https://raw.githubusercontent.com/ArturGesla/git-work/refs/heads/main/py-work/ldc/main.py?token=GHSAT0AAAAAADYORATF76BCS42M36VF2BMQ2OOEY4Q"> script</a> </p> 
+<hr>
+ 
+<p>mesh 100x100 </p> 
+<video width="49%" controls poster="vid/ldc-py-5k-100_poster.png" preload="none" >  <source src="vid/ldc-py-5k-100.mp4" type="video/mp4"> </video> 
+<video width="49%" controls poster="vid/ldc-py-10k-100_poster.png" preload="none" >  <source src="vid/ldc-py-10k-100.mp4" type="video/mp4"> </video> 
+
+<p>Probes of ux at x,y=0.8,0.2 or transpose, one of them; mesh 100x100 generates around 120 fps, mesh 200x200, 25 fps so this could be good for real time sim; script efficiency is wt/nt/nx/nx=5e-7 which is as fast as cpp </p> 
+<img width="49%"  src="img/probe_100_ldc_py.png" alt="mesh">
+<img width="49%"  src="img/probe_200_ldc_py.png" alt="mesh">
+
+<p>mesh 200x200 </p> 
+
+<video width="49%" controls poster="vid/ldc-py-5k-200_poster.png" preload="none" >  <source src="vid/ldc-py-5k-200.mp4" type="video/mp4"> </video> 
+<video width="49%" controls poster="vid/ldc-py-10k-200_poster.png" preload="none" >  <source src="vid/ldc-py-10k-200.mp4" type="video/mp4"> </video> 
+
+<p> </p> <br>
+
+<p> </p> <br>
+
 
 
 </div>
