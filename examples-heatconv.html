@@ -11,14 +11,15 @@
 
 <a href="index.html">return to home</a>
 
-  <h1>Mesh convergence of the heat eq in FreeFem++</h1>
+  <h1>Mesh convergence in FreeFem++</h1>
 
+
+
+<p>FreeFem++ on the heat eq </p>
+<hr>
 <p>laplacian u = f, u=sin(pi*x)*sin(pi*y); f=-1*(sin(pi*x)*pi*pi*sin(pi*y)+sin(pi*y)*pi*pi*sin(pi*x)); hom Dir BC; domain [0,1]x[0,1]; 
 </p>
 
-
-<p>FreeFem++</p>
-<hr>
 <p> 
   ||u||L2=sqrt int u*u dOmega = 0.5
 </p>
@@ -34,6 +35,12 @@
   <div class="myDiv" style="width:69%; margin: auto; " >
 <img width="99%"  src="img/meshconvheatff.png" alt="mesh">
   </div>
+
+  <p>on a regularised swirling jet</p>
+<hr>
+<p>Re=20 (left), Re=200 (right), LT says 3 rd vel, 2nd press on a manufactured solution</p>
+<img width="49%"  src="img/convre20.png" alt="mesh">
+<img width="49%"  src="img/convre200.png" alt="mesh">
   
 
   <!-- <video width="49%" controls poster="vid/posterpipeles.png" preload="none"> <source src="vid/pipeLES.mp4" type="video/mp4">  </video>  -->
